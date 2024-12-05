@@ -1,0 +1,264 @@
+//Window is a special object
+that's always available in the browser.
+
+//anytime we have dependent actions where one thing needs to happen and only after the first thing is finished the second thing  happens thats where  we frequently use callbacks
+
+//promises==promises are objects that repressents the eventual completion   or lets say eventual success or faulure of some operation
+
+//Process Object: A significant focus is placed on the process object, which is always available in Node.js. This object contains information about the current Node process and includes properties like process.version and methods to access the current working directory and memory usage.
+
+//Command-Line Arguments: The instructor introduces process.argv, which is an array of command-line arguments passed when the Node process is launched. The first two elements in this array are always the Node executable path and the script path, while subsequent elements are the arguments provided by the user.
+
+//managing multiple versions using Node Version Manager (NVM) is made.
+
+//Process is an object that's available,
+
+it's in the global scope,
+
+anytime we're using Node.
+
+And it includes information,
+
+according to the docs,
+
+about and methods that provide control over
+
+the current Node.js process.
+
+So this includes things like the version of Node.
+
+It has methods that allow you to get input
+
+and write to the standard output,
+
+basically, write to your console.
+Stuff about memory usage.
+
+Information about the current working directory
+
+that a user is running the script in.
+
+//If we actually just head over to Node,
+
+and I type process,
+
+it's always available.
+
+It's this big old object.
+
+So it has a bunch of methods,
+
+a bunch of properties.
+
+I'll do process.version.
+
+Process.release is in here.
+
+//--node export working ----------------------------------------------------------------------
+const blue = require('./blue');
+const sadie = require('./sadie');
+const janet = require('./janet');
+
+const allCats = [blue, sadie, janet];
+module.exports = allCats; // Exports the array of cats
+Requiring the Entire Directory:
+
+Outside of the shelter directory, in a file like app.js, you can require the entire directory using:
+javascript
+Copy code
+const cats = require('./shelter');
+console.log(cats);
+Node automatically looks for an index.js file in the shelter directory. Whatever index.js exports is what will be returned when requiring the directory.
+//NPM is included with Node.js, so if Node is installed, NPM is available too.
+
+
+//--------express functionality-----------------------------------------------
+
+
+//Express is a minimalist web framework for Node.js that simplifies the process of building web applications and APIs.
+It is installed via NPM (npm install express) and provides methods and add-ons to facilitate web development.
+
+
+//Express helps handle HTTP requests and responses, making it easier to listen for incoming requests and craft appropriate responses.
+Key features include:
+Starting a server to listen for requests.
+Parsing incoming requests and converting them into usable objects.
+Routing requests to specific functions based on the requested URL (e.g., /home, /about).
+Crafting responses, including setting status codes and response content.
+
+//localhost is basically reference to your local machine
+
+//anytime we have an incoming request app.use() will run no matter what kind of request it is whether it is get , post or any other kind of request it just runs for all incoming requests every time requessts hit our server app.use() will run
+
+//port 3000 or 8080  they are like adresses for connnection on your machine , we can have different servers running on different ports in our machine or elswhere they get sort of there own entrance to our machine
+
+//mongoose schema -- this itself has nothing to do with database this is just concept on the javascript side of the equation , now i take this scema and i wanna tell mongoose that i wanna make model using this schema
+
+//Mongoose performs type casting. For example, a string that looks like a number can still be accepted and converted.
+
+//Array Types:
+
+You can define an array of a specific type. For instance, to allow multiple categories for a product, you would do:
+javascript
+Copy code
+categories: { type: [String], default: ['general'] }
+Validation with Arrays:
+
+Mongoose attempts to cast elements of an array to the specified type. However, if an element cannot be cast (like trying to insert a number when expecting a string), it will throw an error.
+Nested Documents:
+
+Mongoose allows for the creation of nested objects (subdocuments). You can define an object structure within a schema.
+javascript
+Copy code
+quantity: {
+    online: { type: Number, default: 0 },
+    inStore: { type: Number, default: 0 }
+}
+
+
+//5. Type Casting
+If a non-string value is added to a string array, MongoDB will attempt to cast it to a string. If this fails, a validation error occurs.
+
+
+//instance methods--its available on every single instance
+//class or static methods ---- are basically methods define on model classes
+
+//bike is an instance of Product modal class or can say it is an instance of product
+// bike.greet();//greet is an instance method
+// Product.find(),Product.findOneAndUpdate()  //find(),findOneAndUpdata() and many more this are class or static methods
+
+//-----------mongoose virtuals-----------------
+
+//virtuals are a really nice feature, actually.
+
+They give us the ability to add properties to a schema
+
+that don't actually exist in the database itself,
+
+but that we have access to thanks to Mongoose.
+
+//-----------mongoose middleware-------------------
+//mongoose gives us the ability to run code before and after certain things are executed certain mongoose methods are called
+
+//-----------cn----------------------------------------------
+
+//Protocols are indeed the rules that govern data exchange over the internet.
+//HTTP and HTTPS: These are protocols specifically for web traffic. HTTP is the foundation of data communication on the web, while HTTPS adds a layer of security through encryption.
+//Protocols: Protocols are indeed the rules that govern data exchange over the internet. You’ve touched on TCP (Transmission Control Protocol), which ensures data integrity, and UDP (User Datagram Protocol), which is used for real-time applications where some data loss is acceptable.
+//IP Addresses: You did a great job explaining IP addresses. They are essential for identifying devices on a network. Just like a phone number helps you reach a specific person, an IP address helps data packets reach the correct device on the internet.
+
+//Ports: You nailed it with ports! They allow multiple applications on the same device to communicate over the internet simultaneously. Each application can be assigned a unique port number, helping the operating system direct incoming data to the right application.
+
+//NAT (Network Address Translation): This is a technique used by routers to allow multiple devices on a local network to share a single global IP address. It keeps track of which device made each request and routes the responses back correctly.
+
+
+//socket
+
+Phone as a Socket:
+
+Jab aap ek phone call karte hain, to aapka phone ek tarah ka "socket" hai. Aapka phone aur jise aap call kar rahe hain, unke beech ek communication channel establish hota hai.
+Is example se samajh aata hai ki socket ek communication endpoint hai jahan se aap data bhejte aur receive karte hain, chahe wo kisi bhi tarah ke protocol (TCP ya UDP) ke zariye ho.
+
+//udp
+
+UDP socket, yaani User Datagram Protocol socket, ek tarah ka network communication endpoint hai jo data packets ko send aur receive karne ke liye istemal hota hai. UDP connectionless protocol hai, iska matlab hai ki isme data transfer ke liye koi formal connection establish nahi kiya jata.
+
+UDP Socket ke Features:
+Connectionless: Aapko sender aur receiver ke beech ek direct connection establish karne ki zaroorat nahi hoti.
+
+Fast Data Transfer: Kyunki UDP error checking aur correction ka dhyan nahi rakhta, isliye yeh TCP ke comparison me zyada fast hota hai.
+
+Data Packets: Data ko chhote packets me bheja jata hai, jo "datagrams" kehlate hain.
+Node.js me UDP Socket:
+Node.js me aap dgram module ka istemal karke UDP sockets create kar sakte hain. Yeh aapko datagrams send aur receive karne ki suvidha deta hai.
+
+
+//WebRTC ka Faida:
+
+WebRTC ki khasiyat ye hai ki ye bina kisi external plugin ke real-time communication provide karta hai. Isse:
+
+Compatibility: WebRTC browsers mein built-in hota hai, isliye users ko alag se kuch install nahi karna padta.
+Security: Plugins ke security vulnerabilities se bachne mein madad milti hai.
+Ease of Use: Users ko turant aur bina kisi complicated setup ke real-time communication ka access milta hai.
+
+
+What is a Thread?
+A thread in computing is the smallest sequence of instructions that can be managed independently by a scheduler. In multi-threaded environments, multiple threads run concurrently, allowing multiple tasks to be performed simultaneously. Think of it like lanes on a highway: each thread can execute its own task independently.
+
+JS is Single-Threaded" Explanation:
+When we say JavaScript is single-threaded, it means that JavaScript can execute only one task at a time, because it has one call stack and one memory heap. The program runs synchronously, processing one function or task at a time, and each task waits for the previous one to finish before moving forward. It’s like having just one lane on a highway — only one car (task) can go at a time.
+
+Example:
+javascript
+Copy code
+console.log("Task 1");
+setTimeout(() => console.log("Task 2 (after delay)"), 1000);
+console.log("Task 3");
+Output:
+
+arduino
+Copy code
+Task 1
+Task 3
+Task 2 (after delay)
+Here, even though Task 2 has a delay, the rest of the code continues executing. The browser handles this delay asynchronously, but JavaScript itself continues processing other tasks on its single thread without being blocked.
+
+This single-threaded nature works with JavaScript’s event loop to handle asynchronous operations like setTimeout, AJAX calls, etc. [1], [2].
+
+//------------------api--------------------
+
+An API (Application Programming Interface) is like a messenger that lets two different software systems talk to each other. Think of it as a waiter in a restaurant.
+
+The menu represents API documentation. It lists all the available endpoints (dishes) and tells you what data (ingredients) you can request.
+The waiter represents the API itself. It takes your request (your order) to the server (kitchen), processes it, and brings back the response (the food).
+So, while the menu helps you understand what’s available (like API documentation), the waiter actually delivers the message and returns the response from the kitchen (the API itself). They work together but serve different purposes.
+
+In web development, you make API calls to get data from a server. For example, if you’re building a weather app, you would use an API to get weather data from a weather service. You make a request, and the API brings you back the forecast without you needing to know how the server works internally.
+
+This interaction between your application and the data source is made seamless with an API, allowing you to focus on building the front-end while the API handles the backend communication
+
+
+1. Synchronous Programming:
+Tasks are executed one after the other, in a blocking manner.
+Each task waits for the previous one to finish before starting.
+If a task takes time, the entire program is paused until that task is completed.
+Example: If you're calling an API synchronously, the code will wait for the API to respond before moving to the next line.
+2. Asynchronous Programming:
+Tasks are executed non-blocking or concurrently.
+The program doesn't wait for a task to finish before starting the next one.
+When a task (like an API call) is finished, the program is notified and the result is handled later.
+Example: You can send an API request, continue with other tasks, and handle the response when it arrives.
+//--------------------------async ,promises-------------------------------
+A Promise is an object representing
+the eventual completion or failure
+of an asynchronous operation
+//promises represents this asynchronous values that will eventually be resolved or rejected so what you can do is you can run the code when that promise resolved or rejected
+
+promises are resolved and rejected with values ,a promise can be resolved or rejected with a value passed to it
+
+//async keyword is the keyword itself that we used to declare a function as an async function and it stands for asynchronous
+//if we declare a function as async(which we just do by putting a async keyword infront of the function) that function automatically returnes a promise you don't need to say it explicitly to return a promise ,if a function(wich we declared async) returns a value the promise will be
+resolved with that value
+//the way that we reject a promise is by throwing an error inside of async/Asynchronous function
+
+
+
+In Node.js, by default, files are treated as CommonJS modules unless specified otherwise.
+
+What it means:
+CommonJS vs. ES Modules: Node.js supports both CommonJS (which uses require()) and ES modules (which use import). If your code includes ES module syntax (like import or export), Node tries to reparse the file as an ES module.
+
+Performance Overhead: Node detects module syntax and reparses the file, which adds a performance overhead because it requires extra processing.
+
+Fix: To eliminate this warning, you need to tell Node.js explicitly that your project uses ES modules. This can be done by adding "type": "module" to your package.json file. This way, Node will automatically treat all .js files as ES modules.
+
+Solution:
+Open your package.json file.
+Add "type": "module" like this:
+json
+Copy code
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "type": "module",
+  ...
