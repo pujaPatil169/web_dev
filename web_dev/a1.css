@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    background-color: blueviolet;
+    color:#37f0af ;
+    text-decoration: underline overline;
+    font-size: 100px;
+}
+body{
+    text-align: center;
+    width: 50%;
+    font-weight: 700;
+    text-decoration:#ff7780 wavy overline;/*line-through ,dotted,text-decoration-style/thickness*/
+    line-height: 2;
+    letter-spacing: 2;
+}
