@@ -1,0 +1,33 @@
+hashing in general refers to taking some arbitrary size inppput and spitting out some fixed size output 
+//one way funcions,password hashing functiiions needs to be slow
+//our cookies were signed  with i think SHA-256 
+//we deliberately take a slower cryptographic hash function for password there are other cryptographic hash functiions that are supposed to be fast and they are use for things like digital signing or signatures 
+//what we talked about earlier with cookies 
+//our cookies were signed  with i think SHA-256  which is a cryptographic hash function but it's a fast hash function  it is not suitable for use in passwords or to hash passwords beacause it's too fast we want something slow
+//there is only a couple of hashing algorithms suitable for storing passwords 
+//bcrypt -is hashing algorithm for storing password,bcrypt is the password hashing function 
+//bcrypt have some built in methods for ex bcrypt.genSalt() which generates password salt for us and bcrypt.hash() which accepts two arguments password and then the salt that we just generated and it will return the hashed password 
+//one of the great part of bcrypt is that we can increae the difficulty of password aka the amout of time it takes to compute the hash so we can slow it down the ideal goal is around 250 miliseconds that's how long we want it to take to hash a password 
+//so that number salt rounds lower that number is the faster the hashing process will be and it will grow exponentially the recomended saltround number is 12 this days ,
+//it's generating a salt and the salt itself is going to dictate how many rounds bcrypt needs to go through how many times it is goin to hash when i actually hash it so this is not gonna take any less time or more time 
+//when we go to verify or log someone in bcrypt has a method called compare that will automatically take a hash and in that hash it can figure out what the salt was ,it's not that difficult it;s just the begining part and then it can use that salt plus the password that we're trying to compare, and itt will run it;s hash and figure out if we get the same response the same ans back
+so we don't have to store the salt ourselves in a seperate location it's just part of the hashed end result 
+//that salt changes in order to introduce some randomness into our hash 
+//once we have a hash password stored somewhere how do we verify somebody's login information?
+//how do we take a password that is typed in or sent to us anad compare that to what we have hashed and stored in the database 
+//well there is a method called compaire and compare expect us to pass in the plain text password and the hash that we already have stored ,compare returns true or false on the basis of if they matched or not respectively 
+
+const login = async (pw,hashedPw) =>{
+     const result = await bcrypt.compare(pw,hashedPw);
+     if(result){
+        console.log('logged you in ');
+     }else{
+        console.log('incoreect');
+     }
+}
+
+hashedPw is something that we store in database 
+//in order for this to work we need to save hashedPw in a database 
+//when user logs in we go and retrive the hashedPw in our database and compare that with the password enter by user and we're goin to see it they're a match 
+login('monkey','$2b$10$8QDhNtHFx6KDHdVbbblrMOwLGeVrUH.ozthXP6NdqjcA5fHspYV5G')
+so monkey will be hashed by bcrypt it;s just this compare method and then it will take that and compared to what we get here from database(hashedPw) and see fi they are matches 
