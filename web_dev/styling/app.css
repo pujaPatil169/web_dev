@@ -1,0 +1,44 @@
+h1{
+     background-color: blueviolet;
+     width: 100px;
+     
+}
+
+#one{
+     width: 500px;
+     height: 200px;
+     background-color: brown;
+     border:5px inset olivedrab;
+     border-radius:50%;
+     padding:20px;
+     /* overflow: hidden; */
+     /* text-overflow:ellipsis; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* overflow:auto; */
+}
+
+#two{
+    width:500px;
+    height: 300px;
+    background-color:plum;
+    border-radius: 10px 100px / 120px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:40px
+}
+
+#three{
+    width:500px;
+    height:200px;
+    background-color:gold;
+    padding-left:20px;
+    
+}
+button{
+    padding:10px 20px;
+    margin:20px;
+    background-color: violet;
+}

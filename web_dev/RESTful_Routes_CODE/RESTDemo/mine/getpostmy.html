@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get and post request</title>
+</head>
+<body>
+    <h1>get and post requests</h1>
+    <h2>get reequest</h2>
+    <form action="http://localhost:3000/tacos" method="get">
+        <input type="text"  name="meat">
+        <input type="number" name="qty">
+        <button>submit</button>
+        <!-- when  i submited the form after typing inputs as carnitos and 4 this is the url my browser takes me to after submitting the form -- file:///tacos?meat=carnitos&qty=4 -->
+    </form>
+    <h2>post request</h2>
+    <form action="http://localhost:3000/tacos" method="post">
+    <input type="text" name="meat">
+    <input type="text" name="qty ">
+    <button>submit</button></form>
+</body>
+</html>
