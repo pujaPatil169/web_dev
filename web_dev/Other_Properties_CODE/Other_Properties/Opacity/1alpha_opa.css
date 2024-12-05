@@ -1,0 +1,32 @@
+body{
+    margin: 0%;
+}
+section{
+    width: 500px;
+    height: 200px;
+    background-color: palevioletred;
+}
+#rgba{
+    width: 50%;
+    height: 75%; 
+    /* background-color: rgba(22, 155, 109,0.7); */
+    background-color: #c6426ecd;
+    box-sizing: border-box;
+    border: 1px solid black;
+    
+    text-align: top
+
+}
+#opacity{
+    
+    width: 50%;
+    height: 75%;
+    /* background-color: rgba(213, green, blue, alpha); */
+    background-color: #d87093;
+    opacity: 0.3;  
+     border: 1px solid black;
+     box-sizing: border-box;
+
+
+
+}

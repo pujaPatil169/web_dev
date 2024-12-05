@@ -1,0 +1,15 @@
+section{
+    width:80% ;
+    height: 800px;
+    margin: 0 auto;
+    background-image:20% url('/home/puja/mobile/ai images/-rustic-village-embraced-by-ethereal-radiance-reminiscent-of-a-celestial-domain-blending-styles-of- (1).jpeg')  no-repeat center / cover ,blue;/*<!--no-repeat lagane par img gayab ho jati hai -->*/
+    /* background-size: cover; */
+    background-size: 20%;
+    background-position: top;
+
+
+}
+h1{
+    font-size: 100px;
+    color: white;
+}

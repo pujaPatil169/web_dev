@@ -1,0 +1,54 @@
+.circle{
+    width: 300px;
+    height: 300px;
+    background-color: magenta;
+    transition:background-color 2s 1s;/*2s-transition time,1s-delay
+    
+     //transition:background-color 1s ,border-radius 2s;
+    
+/*  //transition: background-color 2s; ----only background color will take 2s for transition
+    //transition :all 2s ----all properties will be affected */
+
+
+
+
+}
+
+
+
+
+.circle:hover{
+    background-color: cyan;
+    border-radius: 50%;
+
+
+}
+section div{
+    width: 100px;
+    height: 100px;
+    background-color:turquoise ;
+    margin: 20px 0;
+    transition: margin-left 3s;
+    /* transition: margin-left 3s ease-in; */
+
+
+}
+section:hover div{
+    margin-left: 500px;
+} 
+
+div:nth-of-type(1){
+    transition-timing-function: ease-in;
+}
+
+div:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+
+div:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.7,0,0.84,0);
+}
+
+div:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.85,0,0.15,1);
+}
