@@ -1,0 +1,19 @@
+the idea of session is that we store information on the server and then we send a little cookie back 
+we don't actually need a database to make session work,(redis database which is to store the information which is not have to store for longer term and it is lightweght)
+express-session is going to sign the cookies that it sends back 
+//uninitialised session --means a session that is new but has not been modified 
+//we are now using memory store in context of development but when in real production we will have to use session store ,we 
+can't use memory store for production it leaks and can't be used 
+//we are using memery store right now after refresshing everything just resets because all of our sessiion data is stored on the server side just in local memory it's not in actuall persistent data store so thats'why it's gonna be reset 
+//connect.sid --sid stand for session id this cookie contains only session id (unique identifier and not whole lot of informaion )
+
+//req.session will contain session information for the specific session browsing session that is ongoing 
+//we have to have cookies in order to make sessions work 
+
+//our sessioin eventually for using you know something like redis and we have a production app and we might have a thousand and thousands of people or different pieces of information stored in the session  each associated with a distinct id that is stored in the cookie in those peoples browser 
+
+//right now by default  memory store is just in local memory so it's meant for development purpose
+
+//----------------flash-------------------
+
+//the idea of flash is basically a place in the session to flash message to a user like a success message or confirmation message or error message that shows up one time and then goes away so it's not something you want on the template on the response on every single response it's usually after some actioin and typicaly before you redirect somewhere
