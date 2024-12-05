@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Basics</title>
+</head>
+
+<body>
+
+    <!-- <h1>my form</h1>
+    <form  action="/shelter" id="shelterForm">
+        <input type="text" id="catName" />
+        <button>submit</button>
+    </form>
+    <h2>"available cats"</h2>
+    <ul id="cats">
+        
+    </ul> -->
+    <!-- <h1>Form Events</h1> -->
+
+    <!-- <form action="/dogs" id="tweetForm"> -->
+       
+    <!-- </form> -->
+    <!-- when this form is submittedd, whatever data is included in the form is going to be 
+    subbmited to this --"/dogs"--location :(value of action attribute) a request will 
+    be sent to this spot ,and our entire browser window will end up at that location  -->
+<!-- 
+    The action attribute in HTML is used within the <form> element to specify the URL
+         where the form data should be sent upon submission. When a user fills out a 
+         form and clicks the submit button, the data entered into the form is sent to
+          the server specified in the action attribute. -->
+          <!-- Defines Target URL: The action attribute specifies the endpoint (URL) that
+           will handle the form submission. This could be a server-side script (such as
+            PHP, ASP, etc.) or another web page.
+          Default Behavior: If the action attribute is not specified, the form data is
+           sent to the same URL of the current page. -->
+
+    <!-- <h2>Tweets:</h2> -->
+    <!-- <ul id="tweets"> -->
+
+    <!-- </ul> -->
+
+    <!-- --------from exercise -->
+    <h1>Grocery List</h1>
+    <form action="/nowhere">
+        <label for="product">Enter A Product</label>
+        <input type="text" id="product" name="product">
+        <label for="qty">Enter A Quantity</label>
+        <input type="number" id="qty" name="qty">
+        <button>Submit</button>
+    </form>
+
+    <ul id="list"></ul>
+
+    <script src="my.js"></script>
+</body>
+
+</html>

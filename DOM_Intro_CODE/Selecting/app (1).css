@@ -1,0 +1,79 @@
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+     color: olive ; /* //this style won't be shown in style object of dom only inline styles
+                    will be there in style object of dom(js) */
+}
+
+.purple{
+    color: #7b07ff;
+}
+
+.border {
+    border: 3px solid greenyellow;
+}
+
+#banner {
+    width: 100%;
+}
+img.square {
+    width: 400px;
+    object-fit: cover;
+    height:400px;
+}
+
+#toc {
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    display: table;
+    padding: 1em;
+}
+
+#toc a {
+    text-decoration: none;
+}
+
+.tocnumber {
+    color: black;
+}
+
+/* ---------console-----------writing inline styles using js
+
+
+h1.style.color
+
+VM1439:1 Uncaught ReferenceError: h1 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1439:1
+
+const h1=document.querySelector('h1')
+
+undefined
+
+h1
+<h1 style=​"color:​mediumseagreen">​Silkie Chickens​</h1>​
+h1.color.magenta
+
+VM1574:1 Uncaught TypeError: Cannot read properties of undefined (reading 'magenta')
+    at <anonymous>:1:10
+(anonymous) @ VM1574:1
+
+h1.style.color
+'mediumseagreen'
+
+h1.style.fontSize = '3em' 
+'3em'
+
+h1.style.color = 'plum'
+'plum'
+
+h1.style.border = 2px solid blue   /*error occured everything has to be a string in such cases
+
+VM1952:1 Uncaught SyntaxError: Invalid or unexpected token
+
+
+h1.style.border = '2px solid blue'
+'2px solid blue' */
