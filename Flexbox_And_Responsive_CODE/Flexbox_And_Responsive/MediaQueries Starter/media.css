@@ -1,0 +1,131 @@
+body{
+    font-family: open sans,sans-serif;
+}
+h1{
+    font-size: 6em;
+    text-align: center;
+}
+nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content:space-between;
+}
+ul,li{
+    display: inline;
+    margin:0;
+    padding: 0;
+}
+ul{
+    border: 1px solid black;
+    flex-grow: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* 
+@media(width:800px){
+    h1{
+        color: purple;
+    }
+} */
+/* 
+@media(min-width:100px)(max-width:800px){
+    h1{
+        color: purple;
+    }
+} */
+
+
+
+/*[---here order matters 1000px is overwriting purple color of 400px range
+    
+@media(max-width:400px){
+    h1{
+        color: purple;
+    }
+    
+}
+@media(max-width:1000px){
+    h1{
+        color: rgb(138, 169, 38);
+    }
+
+}]
+
+
+*/
+
+/* reversing the order [large to small value] */
+
+/* 
+@media(max-width:1500px){
+    h1{
+        color: purple;
+    }
+
+}
+@media(max-width:1000px){
+    h1{
+        color: rgb(69, 50, 152);
+    }
+
+}
+@media(max-width:500px){
+    h1{
+        color: rgb(98, 26, 35);
+    }
+
+} */
+h1{
+    color: rgb(221, 74, 41);
+}
+
+@media(min-width:500px){
+    h1{
+        color: rgb(98, 26, 35);
+    }
+}
+@media(min-width:1000px){
+    h1{
+        color: rgb(26, 98, 36);
+    }
+}
+@media(min-width:1500px){
+    h1{
+        color: rgb(26, 46, 98);
+    }
+}
+@media(orientation:landscape){
+   body{ background-color: rgb(60, 110, 121);}
+}
+@media(max-width:768px){
+    h1{
+        font-size: 4em;
+    }
+}
+@media(max-width:576px){
+    h1{
+        font-size: 4em;
+    }
+}
+@media(max-width:768px){
+    h1{
+        font-size: 4em;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    /* nav,nav ul{
+        flex-direction: column;
+        align-items: center;
+
+    } */
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+

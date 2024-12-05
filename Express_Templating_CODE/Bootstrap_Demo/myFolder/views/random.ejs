@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.js">
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Your random number is: <%= rand %></h1>
+    <% if(rand % 2 === 0){ %>
+    <h2>That is an even number!</h2>
+    <% } else { %>
+    <h2>That is an odd number!</h2>
+    <% } %>
+    <p>Here's an alternate way of doing it:</p>
+    <h3>That number is: <%= rand%2===0 ? 'EVEN' : 'ODD' %></h3>
+</body>
+
+</html>

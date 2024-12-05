@@ -1,0 +1,35 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    flex-wrap:wrap-reverse;
+    align-items: flex-end;
+
+}
+
+#container div{
+    width:200px;
+    height:200px;
+    text-align:center;
+   
+}
+
+
+/* ----------note---------- */
+/* 
+flex-wrap: ,this property changes the direction of cross axis 
+flex-direction:,changes the direction of main axis
+if main axis horizontal then cross axis will be vertical and if main axis is vertical the cross axis will be :horizontal
+justify-content --it distributes the items along main axiss .
+align-items  --is going to distribute the items alongg the cross axis */

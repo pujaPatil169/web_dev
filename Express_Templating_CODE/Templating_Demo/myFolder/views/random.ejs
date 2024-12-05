@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <!-- <link rel="stylesheet" href="my.css"> so i want it to be an absolute path based upon wherever this index js file is -->
+     <!--we are serving the entire content of the public directory and they're all accesible we don't have to reference the path slash public beacause the directory itself is not going to serve  it's the content of the directory and if my.css itself is inside of css directory which is inside of public then we will write it as /css/my.css as the value of href -->
+     <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <h1>your random number is:<%=rand %></h1>
+    <!-- <h2>another version is:<%=Math.floor(Math.random()*10+1) %></h2> -->
+    <!-- <h2><% if(rand%2===0){<h3>this is an even number</h3>} %></h2>  this is wrong -->
+     <% if(rand%2===0){  %>
+        <h2>this is even num</h2>
+        <% }else { %>
+            <h2>this is odd num</h2>
+            <% } %>
+
+</body>
+</html>
+
+
+<!-- we want to move out as much logic as possible from our templaate so what will better is generating the number first and then passing it into our template as we have passed in rand in this template instead of actually calculating it in the template -->
